@@ -1,0 +1,35 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/narrowsburg", "destination": "/narrowsburg/index.html" },
+    { "source": "/collection", "destination": "/collection/index.html" },
+    { "source": "/contact", "destination": "/contact/index.html" }
+  ],
+  "redirects": [
+    {
+      "source": "/blog",
+      "destination": "https://REPLACE_WITH_WIX_FREE_URL/blog",
+      "permanent": false
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "https://REPLACE_WITH_WIX_FREE_URL/blog/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/post/:path*",
+      "destination": "https://REPLACE_WITH_WIX_FREE_URL/post/:path*",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hilltop's River Penthouse · Narrowsburg NY Airbnb · Delaware River Views</title>
+  <meta name="description" content="Luxury vacation rental on the Delaware River in Narrowsburg, NY. 2 bedrooms, 2 bathrooms, sleeps 6. West-facing river views, 5-star Airbnb. 90 miles from NYC.">
+  <meta property="og:title" content="Hilltop's River Penthouse · Narrowsburg NY">
+  <meta property="og:description" content="Luxury 2BR vacation rental on the Delaware River. Narrowsburg, NY. 90 miles from NYC.">
+  <link rel="canonical" href="https://www.riverpenthouse.com/">
+  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #f9f6f1;
+      --cream-dark: #f0ebe3;
+      --sand: #e0d8cc;
+      --river: #6b8f9e;
+      --river-deep: #3d6170;
+      --river-light: #a8c4ce;
+      --ink: #1a1a18;
+      --ink-soft: #2e2e2b;
+      --stone: #8a8478;
+      --stone-light: #b5b0a8;
+      --gold: #c4a882;
+      --gold-light: #d4bc9e;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      height: 600px;
+      min-height: 560px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%),
+        url('https://static.wixstatic.com/media/c326ff_f78739d1ba5945bc97abffb8998996c9~mv2.jpg') center/cover no-repeat;
+    }
+    .hero-content {
+      position: relative;
+      padding: 0 80px 80px;
+      max-width: 900px;
+    }
+    .hero-eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 10px;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(56px, 8vw, 104px);
+      line-height: 0.95;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+    .hero-title em { font-style: italic; color: var(--gold-light); }
+    .hero-meta { display: flex; gap: 32px; flex-wrap: wrap; }
+    .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+    .meta-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 22px;
+      color: var(--white);
+      line-height: 1;
+    }
+    .meta-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .meta-divider { width: 1px; background: rgba(255,255,255,0.2); align-self: stretch; }
+
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--river);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(36px, 4vw, 58px);
+      line-height: 1.05;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .section-title em { font-style: italic; color: var(--river-deep); }
+
+    /* ─── INTRO ─── */
+    .intro-section { padding: 100px 48px; }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+    .intro-body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.95;
+      color: var(--stone);
+      margin-top: 28px;
+    }
+    .intro-image { position: relative; }
+    .intro-image img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+    .intro-image-caption {
+      position: absolute;
+      bottom: 0; right: 0;
+      background: var(--river-deep);
+      color: var(--white);
+      padding: 16px 24px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* ─── BEDROOMS ─── */
+    .bedrooms-section { background: var(--cream-dark); padding: 100px 48px; }
+    .bedrooms-header { max-width: 1200px; margin: 0 auto 64px; }
+    .bedrooms-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+    .bedroom-card { position: relative; overflow: hidden; background: var(--white); }
+    .bedroom-image { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+    .bedroom-info { padding: 36px 40px 40px; }
+    .bedroom-number { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 13px; letter-spacing: 0.3em; color: var(--river); text-transform: uppercase; margin-bottom: 10px; }
+    .bedroom-name { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 32px; color: var(--ink); margin-bottom: 16px; line-height: 1.1; }
+    .bedroom-desc { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 15px; line-height: 1.8; color: var(--stone); margin-bottom: 24px; }
+    .bedroom-features { display: flex; flex-wrap: wrap; gap: 8px; }
+    .bedroom-tag { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--river-deep); background: rgba(61,97,112,0.08); padding: 6px 14px; }
+
+    /* ─── SPACE ─── */
+    .space-section { padding: 100px 48px; }
+    .space-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
+    .space-features { margin-top: 40px; }
+    .space-feature {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--sand);
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    .feature-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .feature-name { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 20px; color: var(--ink); margin-bottom: 6px; }
+    .feature-desc { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 14px; line-height: 1.7; color: var(--stone); }
+    .space-image-stack { position: relative; padding-top: 40px; }
+    .space-img-main { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+    .space-img-accent { position: absolute; bottom: -32px; left: -32px; width: 55%; aspect-ratio: 1; object-fit: cover; border: 6px solid var(--cream); }
+
+    /* ─── AMENITIES ─── */
+    .amenities-section { background: var(--ink-soft); padding: 100px 48px; }
+    .amenities-inner { max-width: 1200px; margin: 0 auto; }
+    .amenities-header-row { margin-bottom: 56px; }
+    .amenities-header-row .section-eyebrow { color: var(--river-light); }
+    .amenities-header-row .section-title { color: var(--white); }
+    .amenities-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 48px; }
+    .amenity-row {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-right: 32px;
+    }
+    .amenity-row-icon { font-size: 18px; flex-shrink: 0; }
+    .amenity-row-name { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 14px; color: rgba(255,255,255,0.75); }
+
+    /* ─── VIEWS ─── */
+    .views-section { padding: 100px 48px; text-align: center; }
+    .views-inner { max-width: 800px; margin: 0 auto; }
+    .views-image { width: 100%; aspect-ratio: 21/9; object-fit: cover; display: block; margin-top: 56px; }
+    .views-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(24px, 3vw, 36px); line-height: 1.5; color: var(--ink-soft); margin-top: 48px; padding: 0 40px; }
+    .views-quote-attr { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--stone-light); margin-top: 16px; }
+
+    /* ─── GOOD TO KNOW ─── */
+    .know-section { background: var(--cream-dark); padding: 100px 48px; }
+    .know-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 100px; align-items: start; }
+    .know-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .know-card { background: var(--white); padding: 32px 28px; }
+    .know-icon { font-size: 24px; margin-bottom: 14px; display: block; }
+    .know-title { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 19px; color: var(--ink); margin-bottom: 8px; }
+    .know-text { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 13px; line-height: 1.75; color: var(--stone); }
+
+    /* ─── CTA ─── */
+    .cta-section { background: var(--river-deep); padding: 100px 48px; text-align: center; position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(107,143,158,0.25) 0%, transparent 70%); }
+    .cta-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(40px, 5vw, 72px); color: var(--white); line-height: 1.05; margin-bottom: 16px; position: relative; }
+    .cta-title em { font-style: italic; color: var(--gold-light); }
+    .cta-sub { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 14px; letter-spacing: 0.15em; color: rgba(255,255,255,0.5); margin-bottom: 48px; position: relative; }
+    .btn-white { display: inline-block; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--river-deep); background: var(--white); padding: 18px 48px; text-decoration: none; position: relative; }
+    .cta-contact { margin-top: 28px; font-family: 'Jost', sans-serif; font-weight: 200; font-size: 13px; color: rgba(255,255,255,0.4); position: relative; }
+    .cta-contact a { color: rgba(255,255,255,0.7); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .intro-grid, .space-grid, .know-inner { grid-template-columns: 1fr; gap: 48px; }
+      .space-img-accent { display: none; }
+      .bedrooms-grid { grid-template-columns: 1fr; }
+      .amenities-list { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .hero-content { padding: 0 24px 48px; }
+      .intro-section, .bedrooms-section, .space-section, .amenities-section,
+      .views-section, .know-section, .cta-section { padding: 72px 24px; }
+      .amenities-list { grid-template-columns: 1fr; }
+      .know-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Hilltop's River Penthouse · Narrowsburg, NY</p>
+      <h1 class="hero-title">The<br><em>Penthouse.</em></h1>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="meta-value">2,000</span>
+          <span class="meta-label">Square Feet</span>
+        </div>
+        <div class="meta-divider"></div>
+        <div class="hero-meta-item">
+          <span class="meta-value">2</span>
+          <span class="meta-label">Bedrooms</span>
+        </div>
+        <div class="meta-divider"></div>
+        <div class="hero-meta-item">
+          <span class="meta-value">2</span>
+          <span class="meta-label">Bathrooms</span>
+        </div>
+        <div class="meta-divider"></div>
+        <div class="hero-meta-item">
+          <span class="meta-value">6</span>
+          <span class="meta-label">Guests</span>
+        </div>
+        <div class="meta-divider"></div>
+        <div class="hero-meta-item">
+          <span class="meta-value">★ 5.0</span>
+          <span class="meta-label">Airbnb Rating</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="intro-section">
+    <div class="intro-grid container">
+      <div>
+        <p class="section-eyebrow">The Space</p>
+        <h2 class="section-title">2,000 sq ft.<br>West-side windows<br>facing the <em>river.</em></h2>
+        <p class="intro-body">
+          Hilltop's River Penthouse occupies the entire top floor of a Main Street building in Narrowsburg, NY — perched directly above the deepest stretch of the Delaware River. With west-facing floor-to-ceiling windows, the setting sun creates a nightly spectacle that never gets old.
+          <br><br>
+          Inside, no detail was overlooked. High-end finishes, hotel-quality bedding, and décor curated to the level of a design magazine. This is not a typical vacation rental — it's the nicest rental in Upstate New York.
+        </p>
+      </div>
+      <div class="intro-image">
+        <img src="https://static.wixstatic.com/media/c326ff_21381c411bb04415b6f093555fc189c6~mv2.jpg" alt="River Penthouse living room with Delaware River views, Narrowsburg NY">
+        <div class="intro-image-caption">Main Street · Narrowsburg, NY</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEDROOMS -->
+  <section class="bedrooms-section">
+    <div class="bedrooms-header">
+      <p class="section-eyebrow">Where You'll Sleep</p>
+      <h2 class="section-title">Two bedrooms.<br><em>Both exceptional.</em></h2>
+    </div>
+    <div class="bedrooms-grid container">
+      <div class="bedroom-card">
+        <img class="bedroom-image" src="https://static.wixstatic.com/media/c326ff_0475e490216c4498938882b45616116e~mv2.jpg" alt="Queen bedroom with Delaware River view at River Penthouse Narrowsburg NY">
+        <div class="bedroom-info">
+          <div class="bedroom-number">Bedroom One</div>
+          <div class="bedroom-name">River View Queen</div>
+          <p class="bedroom-desc">The primary bedroom features a Queen bed positioned to face the Delaware River — so the first thing you see every morning is water, sky, and the rolling hills of Pennsylvania beyond. Hotel-quality linens, blackout curtains, and a private ensuite bathroom with quality fixtures throughout.</p>
+          <div class="bedroom-features">
+            <span class="bedroom-tag">Queen Bed</span>
+            <span class="bedroom-tag">River View</span>
+            <span class="bedroom-tag">Ensuite Bath</span>
+            <span class="bedroom-tag">Blackout Curtains</span>
+          </div>
+        </div>
+      </div>
+      <div class="bedroom-card">
+        <img class="bedroom-image" src="https://static.wixstatic.com/media/c326ff_6e3096b37b4a4e3b8c6bfd2713af3d6b~mv2.jpg" alt="King bedroom at River Penthouse Narrowsburg NY Airbnb">
+        <div class="bedroom-info">
+          <div class="bedroom-number">Bedroom Two</div>
+          <div class="bedroom-name">Spacious King</div>
+          <p class="bedroom-desc">A beautifully appointed second bedroom with a King bed with views overlooking Main Street Narrowsburg. Spacious, comfortable, and finished to the same standard as the rest of the Penthouse. Comfortable and private for couples, friends, or family traveling together.</p>
+          <div class="bedroom-features">
+            <span class="bedroom-tag">King Bed</span>
+            <span class="bedroom-tag">Hotel Linens</span>
+            <span class="bedroom-tag">Ample Storage</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPACE FEATURES -->
+  <section class="space-section">
+    <div class="space-grid container">
+      <div>
+        <p class="section-eyebrow">The Full Space</p>
+        <h2 class="section-title">Everything<br>you <em>need.</em></h2>
+        <div class="space-features">
+          <div class="space-feature">
+            <span class="feature-icon">🛋</span>
+            <div>
+              <div class="feature-name">Open Plan Living &amp; Dining</div>
+              <div class="feature-desc">Generous open-plan living and dining area with west-facing river views. The kind of space where you settle in and forget the outside world exists.</div>
+            </div>
+          </div>
+          <div class="space-feature">
+            <span class="feature-icon">🍳</span>
+            <div>
+              <div class="feature-name">Fully Equipped Kitchen</div>
+              <div class="feature-desc">Everything you need for a long weekend in — quality appliances, full cookware, coffee setup, and more. Self-catering is a genuine option here.</div>
+            </div>
+          </div>
+          <div class="space-feature">
+            <span class="feature-icon">💻</span>
+            <div>
+              <div class="feature-name">Dedicated Workspace</div>
+              <div class="feature-desc">A proper desk and high-speed WiFi for anyone who needs to sneak in a few hours. Works as well for remote work as it does for planning the day's adventures.</div>
+            </div>
+          </div>
+          <div class="space-feature">
+            <span class="feature-icon">🚿</span>
+            <div>
+              <div class="feature-name">Two Full Bathrooms</div>
+              <div class="feature-desc">Private ensuite for the queen bedroom, full second bathroom for the king. Quality fixtures, good water pressure, proper towels. No compromises.</div>
+            </div>
+          </div>
+          <div class="space-feature">
+            <span class="feature-icon">🔐</span>
+            <div>
+              <div class="feature-name">Smart Lock Self Check-In</div>
+              <div class="feature-desc">Full access instructions sent before your arrival. Check yourself in on your schedule — no waiting around for keys, no coordination required.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="space-image-stack">
+        <img class="space-img-main" src="https://static.wixstatic.com/media/c326ff_85c897d408414dbba532acf3c968e7b8~mv2.jpg" alt="Penthouse kitchen and living area Narrowsburg NY vacation rental">
+        <img class="space-img-accent" src="https://static.wixstatic.com/media/c326ff_31f36fd74d2c44218048129173a551fe~mv2.jpg" alt="Bathroom detail River Penthouse Narrowsburg">
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section class="amenities-section">
+    <div class="amenities-inner">
+      <div class="amenities-header-row">
+        <p class="section-eyebrow">Full Amenities</p>
+        <h2 class="section-title">Everything<br><em>included.</em></h2>
+      </div>
+      <div class="amenities-list">
+        <div class="amenity-row"><span class="amenity-row-icon">🛏</span><span class="amenity-row-name">Queen bedroom with Delaware River view</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">🛌</span><span class="amenity-row-name">King bedroom with town view</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">🚿</span><span class="amenity-row-name">2 full private bathrooms</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">🍳</span><span class="amenity-row-name">Fully equipped kitchen</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">☕</span><span class="amenity-row-name">Coffee &amp; espresso setup</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">🍽</span><span class="amenity-row-name">Dining area</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">📶</span><span class="amenity-row-name">High-speed WiFi</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">💻</span><span class="amenity-row-name">Dedicated workspace</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">📺</span><span class="amenity-row-name">Smart TV with streaming</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">🌅</span><span class="amenity-row-name">West-facing Delaware River views</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">🔐</span><span class="amenity-row-name">Smart lock self check-in</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">🅿️</span><span class="amenity-row-name">Free street parking</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">❄️</span><span class="amenity-row-name">Air conditioning</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">🔥</span><span class="amenity-row-name">Heating</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">🧺</span><span class="amenity-row-name">Washer &amp; dryer</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">🏔</span><span class="amenity-row-name">Access to Hilltop trail system</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">🛍</span><span class="amenity-row-name">Narrowsburg Proper downstairs</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">🍷</span><span class="amenity-row-name">Fine Wine &amp; Spirits downstairs</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIEWS -->
+  <section class="views-section">
+    <div class="views-inner">
+      <p class="section-eyebrow">The Views</p>
+      <h2 class="section-title">Watch bald eagles<br>fish the <em>Delaware.</em></h2>
+      <img class="views-image" src="https://static.wixstatic.com/media/c326ff_f6d3d3d2e70c4445824c9f0eef327d22~mv2.jpg" alt="Panoramic Delaware River view from Narrowsburg NY River Penthouse Airbnb">
+      <p class="views-quote">"The views are absolutely unreal. We watched bald eagles every morning with our coffee. Nothing was overlooked."</p>
+      <p class="views-quote-attr">Airbnb Guest · 5 Stars · 2025</p>
+    </div>
+  </section>
+
+  <!-- GOOD TO KNOW -->
+  <section class="know-section">
+    <div class="know-inner container">
+      <div>
+        <p class="section-eyebrow">Good to Know</p>
+        <h2 class="section-title">Before<br>you <em>arrive.</em></h2>
+      </div>
+      <div class="know-grid">
+        <div class="know-card">
+          <span class="know-icon">🎂</span>
+          <div class="know-title">Minimum Age</div>
+          <p class="know-text">Guests must be 25 or older to book the Penthouse.</p>
+        </div>
+        <div class="know-card">
+          <span class="know-icon">👥</span>
+          <div class="know-title">Guest Limit</div>
+          <p class="know-text">Maximum 6 guests inside the apartment at any time.</p>
+        </div>
+        <div class="know-card">
+          <span class="know-icon">🕓</span>
+          <div class="know-title">Check-In &amp; Out</div>
+          <p class="know-text">Check-in after 4:00 PM. Check-out before 11:00 AM. Early or late may be available on request.</p>
+        </div>
+        <div class="know-card">
+          <span class="know-icon">🪜</span>
+          <div class="know-title">Stairs Required</div>
+          <p class="know-text">The Penthouse is on the second floor. Stairs are required to access — there is no elevator.</p>
+        </div>
+        <div class="know-card">
+          <span class="know-icon">🐾</span>
+          <div class="know-title">Pets</div>
+          <p class="know-text">Contact us directly to discuss pet arrangements before booking.</p>
+        </div>
+        <div class="know-card">
+          <span class="know-icon">📞</span>
+          <div class="know-title">Always On Call</div>
+          <p class="know-text">Someone is always available to answer questions or help during your stay. Response within the hour.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <p class="section-eyebrow" style="color: rgba(255,255,255,0.4);">Available Year-Round</p>
+    <h2 class="cta-title">Ready to<br><em>book your stay?</em></h2>
+    <p class="cta-sub">Narrowsburg, NY · 90 miles from New York City</p>
+    <a href="https://www.airbnb.com/rooms/1452914886228919955" target="_blank" class="btn-white">Book on Airbnb</a>
+    <p class="cta-contact">Questions? <a href="tel:5702511998">(570) 251-1998</a> · <a href="/cdn-cgi/l/email-protection#c6aea3aaaaa986b4afb0a3b4b6a3a8b2aea9b3b5a3e8a5a9ab">
