@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hilltop's River Penthouse · Narrowsburg NY Airbnb · Delaware River Views</title>
-  <meta name="description" content="Luxury vacation rental on the Delaware River in Narrowsburg, NY. 2 bedrooms, 2 bathrooms, sleeps 6. West-facing river views, 5-star Airbnb. 90 miles from NYC.">
-  <meta property="og:title" content="Hilltop's River Penthouse · Narrowsburg NY">
-  <meta property="og:description" content="Luxury 2BR vacation rental on the Delaware River. Narrowsburg, NY. 90 miles from NYC.">
-  <link rel="canonical" href="https://www.riverpenthouse.com/">
-  <meta name="robots" content="index, follow">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hilltop's River Penthouse · Narrowsburg NY Airbnb · Delaware River Views</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -41,6 +36,119 @@
       max-width: 100%;
       margin: 0;
       padding: 0;
+    }
+
+    /* ─── NAV ─── */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0 48px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
+    .site-nav.scrolled {
+      background: rgba(26,26,24,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 18px;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      flex-shrink: 0;
+    }
+    .nav-logo em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a.active { color: var(--white); }
+    .nav-links .nav-book a {
+      color: var(--gold-light);
+      border-bottom: 1px solid rgba(196,168,130,0.4);
+      padding-bottom: 2px;
+    }
+    .nav-links .nav-book a:hover { color: var(--gold); border-color: var(--gold); }
+
+    /* mobile nav */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: rgba(255,255,255,0.7);
+      transition: all 0.3s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: rgba(26,26,24,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 99;
+      padding: 32px 48px 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-mobile.open { display: block; }
+    .nav-mobile ul { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+    .nav-mobile a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 12px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+    }
+    .nav-mobile a:hover { color: var(--white); }
+    .nav-mobile .nav-book-mobile a { color: var(--gold-light); }
+
+    @media (max-width: 768px) {
+      .site-nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-mobile { padding: 32px 24px 40px; }
     }
 
     /* ─── HERO ─── */
@@ -240,6 +348,34 @@
   </style>
 </head>
 <body>
+
+  <!-- NAV -->
+  <nav class="site-nav" id="siteNav">
+    <a href="index.html" class="nav-logo">Hilltop's <em>River Penthouse</em></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Penthouse</a></li>
+      <li><a href="narrowsburg.html">Narrowsburg</a></li>
+      <li><a href="collection.html">The Hilltop Collection</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li class="nav-book"><a href="https://www.airbnb.com/rooms/1452914886228919955" target="_blank">Book Now</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="nav-mobile" id="navMobile">
+    <ul>
+      <li><a href="index.html">Penthouse</a></li>
+      <li><a href="narrowsburg.html">Narrowsburg</a></li>
+      <li><a href="collection.html">The Hilltop Collection</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li class="nav-book-mobile"><a href="https://www.airbnb.com/rooms/1452914886228919955" target="_blank">Book Now →</a></li>
+    </ul>
+  </div>
 
   <!-- HERO -->
   <div class="hero">
@@ -472,4 +608,31 @@
     <h2 class="cta-title">Ready to<br><em>book your stay?</em></h2>
     <p class="cta-sub">Narrowsburg, NY · 90 miles from New York City</p>
     <a href="https://www.airbnb.com/rooms/1452914886228919955" target="_blank" class="btn-white">Book on Airbnb</a>
-    <p class="cta-contact">Questions? <a href="tel:5702511998">(570) 251-1998</a> · <a href="/cdn-cgi/l/email-protection#c6aea3aaaaa986b4afb0a3b4b6a3a8b2aea9b3b5a3e8a5a9ab">
+    <p class="cta-contact">Questions? <a href="tel:5702511998">(570) 251-1998</a> · <a href="mailto:hello@riverpenthouse.com">Email Us</a></p>
+  </section>
+
+  <script>
+    // Scroll: transparent over hero, dark once scrolled
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Mobile toggle
+    const toggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('navMobile');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+    });
+    // Close on link click
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('open');
+        mobileNav.classList.remove('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
