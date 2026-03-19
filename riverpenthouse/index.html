@@ -4,6 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hilltop's River Penthouse · Narrowsburg NY Airbnb · Delaware River Views</title>
+  <meta name="description" content="Hilltop's River Penthouse — a 2,000 sq ft luxury Airbnb on Main Street Narrowsburg NY, perched above the Delaware River. 2 bedrooms, 2 baths, sleeps 6. 90 miles from NYC.">
+  <link rel="canonical" href="https://www.riverpenthouse.com/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LodgingBusiness",
+        "@id": "https://www.riverpenthouse.com/#lodging",
+        "name": "Hilltop's River Penthouse",
+        "description": "A 2,000 sq ft luxury penthouse on Main Street Narrowsburg NY, perched directly above the deepest stretch of the Delaware River. 2 bedrooms, 2 bathrooms, sleeps 6 guests. West-facing floor-to-ceiling windows with panoramic river views. 90 miles from New York City.",
+        "url": "https://www.riverpenthouse.com",
+        "telephone": "+15702511998",
+        "email": "thehilltopproperties@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "44 Main Street",
+          "addressLocality": "Narrowsburg",
+          "addressRegion": "NY",
+          "postalCode": "12764",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 41.6012,
+          "longitude": -74.9957
+        },
+        "image": [
+          "https://static.wixstatic.com/media/c326ff_f78739d1ba5945bc97abffb8998996c9~mv2.jpg",
+          "https://static.wixstatic.com/media/c326ff_21381c411bb04415b6f093555fc189c6~mv2.jpg",
+          "https://static.wixstatic.com/media/c326ff_f6d3d3d2e70c4445824c9f0eef327d22~mv2.jpg"
+        ],
+        "priceRange": "$$",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "bestRating": "5",
+          "ratingCount": "10",
+          "reviewAspect": "Airbnb"
+        },
+        "amenityFeature": [
+          {"@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Air conditioning", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Kitchen", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Washer", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Dryer", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Self check-in", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "River view", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Free parking", "value": true}
+        ],
+        "numberOfRooms": 2,
+        "checkinTime": "16:00",
+        "checkoutTime": "11:00",
+        "petsAllowed": false,
+        "tourBookingPage": "https://www.airbnb.com/rooms/1452914886228919955"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.riverpenthouse.com/#organization",
+        "name": "Hilltop's River Penthouse",
+        "url": "https://www.riverpenthouse.com",
+        "telephone": "+15702511998",
+        "email": "thehilltopproperties@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "44 Main Street",
+          "addressLocality": "Narrowsburg",
+          "addressRegion": "NY",
+          "postalCode": "12764",
+          "addressCountry": "US"
+        },
+        "sameAs": [
+          "https://www.airbnb.com/rooms/1452914886228919955",
+          "https://www.stayathilltop.com"
+        ]
+      }
+    ]
+  }
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -608,10 +687,10 @@
     <h2 class="cta-title">Ready to<br><em>book your stay?</em></h2>
     <p class="cta-sub">Narrowsburg, NY · 90 miles from New York City</p>
     <a href="https://www.airbnb.com/rooms/1452914886228919955" target="_blank" class="btn-white">Book on Airbnb</a>
-    <p class="cta-contact">Questions? <a href="tel:5702511998">(570) 251-1998</a> · <a href="mailto:hello@riverpenthouse.com">Email Us</a></p>
+    <p class="cta-contact">Questions? <a href="tel:5702511998">(570) 251-1998</a> · <a href="/cdn-cgi/l/email-protection#0b636e6767644b79627d6e797b6e657f63647e786e25686466">Email Us</a></p>
   </section>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Scroll: transparent over hero, dark once scrolled
     const nav = document.getElementById('siteNav');
     window.addEventListener('scroll', () => {
@@ -627,12 +706,4 @@
     });
     // Close on link click
     mobileNav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        toggle.classList.remove('open');
-        mobileNav.classList.remove('open');
-      });
-    });
-  </script>
-
-</body>
-</html>
+      a.addEventLis
