@@ -3,24 +3,24 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
-    { "source": "/narrowsburg", "destination": "/narrowsburg/index.html" },
-    { "source": "/collection", "destination": "/collection/index.html" },
-    { "source": "/contact", "destination": "/contact/index.html" }
+    { "source": "/narrowsburg", "destination": "/narrowsburg.html" },
+    { "source": "/collection", "destination": "/collection.html" },
+    { "source": "/contact", "destination": "/contact.html" }
   ],
   "redirects": [
     {
       "source": "/blog",
-      "destination": "https://REPLACE_WITH_WIX_FREE_URL/blog",
+      "destination": "https://www.riverpenthouse.com/blog",
       "permanent": false
     },
     {
       "source": "/blog/:path*",
-      "destination": "https://REPLACE_WITH_WIX_FREE_URL/blog/:path*",
+      "destination": "https://www.riverpenthouse.com/blog/:path*",
       "permanent": false
     },
     {
       "source": "/post/:path*",
-      "destination": "https://REPLACE_WITH_WIX_FREE_URL/post/:path*",
+      "destination": "https://www.riverpenthouse.com/post/:path*",
       "permanent": false
     }
   ],
@@ -32,4 +32,4 @@
       ]
     }
   ]
-} 
+}
