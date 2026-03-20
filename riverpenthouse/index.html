@@ -706,4 +706,12 @@
     });
     // Close on link click
     mobileNav.querySelectorAll('a').forEach(a => {
-      a.addEventLis
+      a.addEventListener('click', () => {
+        toggle.classList.remove('open');
+        mobileNav.classList.remove('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
