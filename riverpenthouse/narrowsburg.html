@@ -17,6 +17,7 @@
         "description": "A lively Delaware River town in Sullivan County NY, 90 miles from New York City. Known for world-class farm-to-table dining, bald eagle watching, rafting, and some of the finest sunsets in the Northeast.",
         "url": "https://www.riverpenthouse.com/narrowsburg.html",
         "touristType": "Weekend travelers, NYC day-trippers, nature lovers, foodies",
+        "keywords": "things to do in narrowsburg ny, narrowsburg ny restaurants, narrowsburg ny things to do, weekend getaways upstate ny, catskills weekend getaway, delaware river things to do, narrowsburg ny guide, sullivan county ny travel, upstate ny weekend trip, bethel woods narrowsburg",
         "geo": {
           "@type": "GeoCoordinates",
           "latitude": 41.6012,
@@ -855,4 +856,15 @@
     const mobileNav = document.getElementById('navMobile');
     toggle.addEventListener('click', () => {
       toggle.classList.toggle('open');
-      mobi
+      mobileNav.classList.toggle('open');
+    });
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('open');
+        mobileNav.classList.remove('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
