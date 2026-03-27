@@ -7,23 +7,6 @@
     { "source": "/collection", "destination": "/collection.html" },
     { "source": "/contact", "destination": "/contact.html" }
   ],
-  "redirects": [
-    {
-      "source": "/blog",
-      "destination": "https://www.riverpenthouse.com/blog",
-      "permanent": false
-    },
-    {
-      "source": "/blog/:path*",
-      "destination": "https://www.riverpenthouse.com/blog/:path*",
-      "permanent": false
-    },
-    {
-      "source": "/post/:path*",
-      "destination": "https://www.riverpenthouse.com/post/:path*",
-      "permanent": false
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
