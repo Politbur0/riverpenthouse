@@ -358,7 +358,9 @@
     .dining-category-label::after { content: ''; flex: 1; height: 1px; background: var(--sand); }
     .restaurants-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
     .restaurants-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; }
-    .restaurant-card { background: var(--white); overflow: hidden; }
+    .restaurant-card { background: var(--white); overflow: hidden; display: block; color: inherit; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .restaurant-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(26,26,24,0.08); }
+    .restaurant-card:hover .restaurant-name { color: var(--river-deep); }
     .restaurant-image { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
     .restaurant-info { padding: 24px 24px 28px; }
     .restaurant-distance { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--river); margin-bottom: 8px; }
@@ -366,7 +368,9 @@
     .restaurant-type { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--stone-light); margin-bottom: 12px; }
     .restaurant-desc { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 13px; line-height: 1.75; color: var(--stone); }
     .restaurant-tag { display: inline-block; margin-top: 14px; font-family: 'Jost', sans-serif; font-weight: 200; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--river-deep); background: rgba(61,97,112,0.08); padding: 5px 12px; }
-    .coffee-card { background: var(--white); overflow: hidden; }
+    .coffee-card { background: var(--white); overflow: hidden; display: block; color: inherit; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .coffee-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(26,26,24,0.08); }
+    .coffee-card:hover .coffee-name { color: var(--river-deep); }
     .coffee-image { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
     .coffee-info { padding: 24px 24px 28px; }
     .coffee-distance { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
@@ -384,6 +388,10 @@
     .heron-text .section-title em { color: var(--gold-light); }
     .heron-body { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.9; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
     .heron-note { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 18px; color: var(--gold-light); margin-top: 24px; }
+    .feature-image-link { display: block; overflow: hidden; transition: transform 0.4s ease; }
+    .feature-image-link:hover { transform: scale(1.02); }
+    .feature-cta { display: inline-block; margin-top: 32px; padding: 14px 28px; font-family: 'Jost', sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-light); border: 1px solid var(--gold-light); text-decoration: none; transition: all 0.3s ease; }
+    .feature-cta:hover { background: var(--gold-light); color: var(--river-deep); }
 
     /* ─── THINGS TO DO ─── */
     .todo-section { padding: 100px 48px; }
@@ -569,7 +577,7 @@
 
       <div class="dining-category-label">Fine Dining</div>
       <div class="restaurants-grid">
-        <div class="restaurant-card">
+        <a class="restaurant-card" href="https://www.theheronrestaurant.com/" target="_blank" rel="noopener noreferrer">
           <img class="restaurant-image" src="/img/heron.webp" alt="Mussels and grilled bread at The Heron Restaurant Narrowsburg NY — farm to table dining">
           <div class="restaurant-info">
             <div class="restaurant-distance">📍 Downstairs · 40 Main St, Narrowsburg NY</div>
@@ -578,8 +586,8 @@
             <p class="restaurant-desc">The restaurant that started the farm-to-table movement in the Catskills. Seasonal menu, river views from the back patio, and a dining room that books up fast on weekends. One of the best restaurants in the entire region — located on the ground floor of the same building as the Penthouse.</p>
             <span class="restaurant-tag">Reserve Ahead</span>
           </div>
-        </div>
-        <div class="restaurant-card">
+        </a>
+        <a class="restaurant-card" href="https://www.lacigogneny.com/" target="_blank" rel="noopener noreferrer">
           <img class="restaurant-image" src="/img/cigogne.jpg" alt="Sunset over the Delaware River with a glass of rosé at La Cigogne French Bistro Narrowsburg NY">
           <div class="restaurant-info">
             <div class="restaurant-distance">📍 90 Main St, Narrowsburg NY</div>
@@ -588,8 +596,8 @@
             <p class="restaurant-desc">A little piece of Alsace in the heart of Narrowsburg. Owner Damien, originally from Strasbourg, brings authentic French cuisine — Pork Schnitzel, Coq Au Vin, Tarte Flambée — with Alsatian beers, French wines, and a fireplace in winter. Romantic and excellent.</p>
             <span class="restaurant-tag">Reserve Recommended</span>
           </div>
-        </div>
-        <div class="restaurant-card">
+        </a>
+        <a class="restaurant-card" href="https://www.facebook.com/p/Bridge-and-Main-61581138516852/" target="_blank" rel="noopener noreferrer">
           <img class="restaurant-image" src="/img/bridge-and-main.webp" alt="Bridge and Main restaurant Narrowsburg NY">
           <div class="restaurant-info">
             <div class="restaurant-distance">📍 251 Bridge St, Narrowsburg NY</div>
@@ -598,12 +606,12 @@
             <p class="restaurant-desc">A cozy-upscale restaurant and lounge on Bridge Street featuring steak, seafood, burgers, and American classics. Views of the Narrowsburg Bridge, craft cocktails, and a full bar. Gluten-free, vegetarian, and vegan options available.</p>
             <span class="restaurant-tag">Walk-Ins Welcome</span>
           </div>
-        </div>
+        </a>
       </div>
 
       <div class="dining-category-label" style="margin-top: 40px;">Casual &amp; Pizza</div>
       <div class="restaurants-grid-2">
-        <div class="restaurant-card">
+        <a class="restaurant-card" href="https://www.thelaundrette.xyz/" target="_blank" rel="noopener noreferrer">
           <img class="restaurant-image" src="/img/laundrette.webp" alt="Tablescape on The Laundrette's porch with Delaware River views — Narrowsburg NY wood-fired pizza and wine bar">
           <div class="restaurant-info">
             <div class="restaurant-distance">📍 20 5th St, Narrowsburg NY</div>
@@ -612,8 +620,8 @@
             <p class="restaurant-desc">Wood-fired sourdough pizzas made with local and organic ingredients, inventive salads, and a top-flight sound system. A porch with a direct view of the Narrowsburg Bridge and the Delaware River. Open Thursday through Sunday.</p>
             <span class="restaurant-tag">Thu–Sun Only</span>
           </div>
-        </div>
-        <div class="restaurant-card">
+        </a>
+        <a class="restaurant-card" href="https://www.bigeddybrewingco.com/" target="_blank" rel="noopener noreferrer">
           <img class="restaurant-image" src="/img/big-eddy-brewery.webp" alt="Big Eddy Brewery Narrowsburg NY — craft beer and BBQ">
           <div class="restaurant-info">
             <div class="restaurant-distance">📍 Main St, Narrowsburg NY</div>
@@ -622,12 +630,12 @@
             <p class="restaurant-desc">Narrowsburg's beloved craft brewery, now also home to Smok'd NY BBQ by Chef JP Medina. Great beer, smoked meats, a relaxed atmosphere, and a patio perfect for a warm afternoon on the river. A Narrowsburg institution.</p>
             <span class="restaurant-tag">Walk-In Welcome</span>
           </div>
-        </div>
+        </a>
       </div>
 
       <div class="dining-category-label" style="margin-top: 40px;">Morning Coffee</div>
       <div class="restaurants-grid-2">
-        <div class="coffee-card">
+        <a class="coffee-card" href="https://www.tustencup.com/" target="_blank" rel="noopener noreferrer">
           <img class="coffee-image" src="/img/tusten-cup.webp" alt="The Tusten Cup coffee shop Narrowsburg NY — 8 Main St">
           <div class="coffee-info">
             <div class="coffee-distance">☕ 8 Main St, Narrowsburg · Open 7 Days</div>
@@ -635,8 +643,8 @@
             <div class="coffee-type">Coffee Shop · Breakfast &amp; Lunch</div>
             <p class="coffee-desc">Narrowsburg's daily ritual. Full espresso bar, classic drip coffee, fresh pastries, and made-to-order breakfast and lunch sandwiches. Outdoor patio overlooking the Delaware River and the Narrowsburg bridge. Open 7am–4pm every day of the week.</p>
           </div>
-        </div>
-        <div class="coffee-card">
+        </a>
+        <a class="coffee-card" href="https://2queens.coffee/" target="_blank" rel="noopener noreferrer">
           <img class="coffee-image" src="/img/two-queens-coffee.webp" alt="2 Queens Coffee Narrowsburg NY — specialty coffee">
           <div class="coffee-info">
             <div class="coffee-distance">☕ 90 Main St, Narrowsburg · Wed–Sun</div>
@@ -644,7 +652,7 @@
             <div class="coffee-type">Specialty Coffee · Café</div>
             <p class="coffee-desc">A specialty coffee shop on Main Street in the same building as La Cigogne and Narrowsburg Proper. Quality espresso drinks, a focused menu, and a relaxed neighborhood vibe. Open Wednesday through Sunday from 7:30am.</p>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -653,7 +661,9 @@
   <section class="heron-section">
     <div class="heron-inner">
       <div>
-        <img class="heron-image" src="/img/landers-river-trips.webp" alt="Group canoeing and kayaking the Delaware River with Lander's River Trips, Narrowsburg NY">
+        <a href="https://landersrivertrips.com/" target="_blank" rel="noopener noreferrer" class="feature-image-link">
+          <img class="heron-image" src="/img/landers-river-trips.webp" alt="Group canoeing and kayaking the Delaware River with Lander's River Trips, Narrowsburg NY">
+        </a>
       </div>
       <div class="heron-text">
         <p class="section-eyebrow">Right on the River</p>
@@ -661,6 +671,7 @@
         <p class="heron-body">Lander's River Trips has been launching rafts, canoes, kayaks, and tubes onto the Delaware River for decades — a Narrowsburg institution. Five launch and landing points along the river let you pick your own level of adventure: a 2.5-hour float, a full 5-hour ride, or an overnight camping trip at Skinners Falls.</p>
         <p class="heron-body">First-time river-goers, families with kids, and experienced paddlers alike. Rafts hold 4 to 6 people — ideal for groups. The Delaware here is a leisurely scenic float, not whitewater — gorgeous scenery suitable for all ages.</p>
         <p class="heron-note">Book ahead in summer — weekends fill up fast.</p>
+        <a href="https://landersrivertrips.com/" target="_blank" rel="noopener noreferrer" class="feature-cta">Visit Lander's River Trips →</a>
       </div>
     </div>
   </section>
@@ -740,6 +751,7 @@
         <p class="bethel-body">Bethel Woods sits on the legendary grounds of the 1969 Woodstock Music Festival — just 30 minutes from Narrowsburg. One of the most iconic outdoor concert venues in America, with a full summer and fall season of major acts in Bethel, NY.</p>
         <p class="bethel-body">When a big show comes to town, the Penthouse is the perfect basecamp. Skip the overpriced hotels, wake up the next morning to bald eagles and river views, and have The Heron downstairs for dinner before the show.</p>
         <p class="bethel-detail">"The perfect basecamp for a Bethel Woods show."</p>
+        <a href="https://www.bethelwoodscenter.org/" target="_blank" rel="noopener noreferrer" class="feature-cta">Plan your visit to Bethel Woods →</a>
       </div>
       <div class="bethel-stats">
         <div class="bethel-stat">
