@@ -1,6 +1,15 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/narrowsburg.html", "destination": "/narrowsburg", "permanent": true },
+    { "source": "/collection.html", "destination": "/collection", "permanent": true },
+    { "source": "/contact.html", "destination": "/contact", "permanent": true },
+    { "source": "/narrowsburg/index.html", "destination": "/narrowsburg", "permanent": true },
+    { "source": "/collection/index.html", "destination": "/collection", "permanent": true },
+    { "source": "/contact/index.html", "destination": "/contact", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/narrowsburg", "destination": "/narrowsburg.html" },

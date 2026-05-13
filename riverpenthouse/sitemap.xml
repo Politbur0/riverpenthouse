@@ -3,28 +3,28 @@
 
   <url>
     <loc>https://www.riverpenthouse.com/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.riverpenthouse.com/narrowsburg.html</loc>
-    <lastmod>2026-03-27</lastmod>
+    <loc>https://www.riverpenthouse.com/narrowsburg</loc>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.riverpenthouse.com/collection.html</loc>
-    <lastmod>2026-03-27</lastmod>
+    <loc>https://www.riverpenthouse.com/collection</loc>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.riverpenthouse.com/contact.html</loc>
-    <lastmod>2026-03-27</lastmod>
+    <loc>https://www.riverpenthouse.com/contact</loc>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
