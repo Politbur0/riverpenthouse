@@ -8,13 +8,27 @@
     { "source": "/contact.html", "destination": "/contact", "permanent": true },
     { "source": "/narrowsburg/index.html", "destination": "/narrowsburg", "permanent": true },
     { "source": "/collection/index.html", "destination": "/collection", "permanent": true },
-    { "source": "/contact/index.html", "destination": "/contact", "permanent": true }
+    { "source": "/contact/index.html", "destination": "/contact", "permanent": true },
+    { "source": "/blog/index.html", "destination": "/blog", "permanent": true },
+    { "source": "/blog/where-to-see-bald-eagles-narrowsburg.html", "destination": "/blog/where-to-see-bald-eagles-narrowsburg", "permanent": true },
+    { "source": "/blog/bethel-woods-concert-weekend-narrowsburg.html", "destination": "/blog/bethel-woods-concert-weekend-narrowsburg", "permanent": true },
+    { "source": "/blog/tusten-mountain-trail-hike-narrowsburg.html", "destination": "/blog/tusten-mountain-trail-hike-narrowsburg", "permanent": true },
+    { "source": "/blog/skinners-falls-swimming-guide.html", "destination": "/blog/skinners-falls-swimming-guide", "permanent": true },
+    { "source": "/blog/where-to-stay-near-bethel-woods.html", "destination": "/blog/where-to-stay-near-bethel-woods", "permanent": true },
+    { "source": "/blog/perfect-fall-weekend-narrowsburg.html", "destination": "/blog/perfect-fall-weekend-narrowsburg", "permanent": true }
   ],
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/narrowsburg", "destination": "/narrowsburg.html" },
     { "source": "/collection", "destination": "/collection.html" },
-    { "source": "/contact", "destination": "/contact.html" }
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/blog/where-to-see-bald-eagles-narrowsburg", "destination": "/blog/where-to-see-bald-eagles-narrowsburg.html" },
+    { "source": "/blog/bethel-woods-concert-weekend-narrowsburg", "destination": "/blog/bethel-woods-concert-weekend-narrowsburg.html" },
+    { "source": "/blog/tusten-mountain-trail-hike-narrowsburg", "destination": "/blog/tusten-mountain-trail-hike-narrowsburg.html" },
+    { "source": "/blog/skinners-falls-swimming-guide", "destination": "/blog/skinners-falls-swimming-guide.html" },
+    { "source": "/blog/where-to-stay-near-bethel-woods", "destination": "/blog/where-to-stay-near-bethel-woods.html" },
+    { "source": "/blog/perfect-fall-weekend-narrowsburg", "destination": "/blog/perfect-fall-weekend-narrowsburg.html" }
   ],
   "headers": [
     {
