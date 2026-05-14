@@ -33,11 +33,11 @@
         },
         "image": [
           "https://www.riverpenthouse.com/img/hero.webp",
-          "https://www.riverpenthouse.com/img/living-room.webp",
-          "https://www.riverpenthouse.com/img/queen-bedroom.webp",
-          "https://www.riverpenthouse.com/img/king-bedroom.webp",
-          "https://www.riverpenthouse.com/img/kitchen.webp",
-          "https://www.riverpenthouse.com/img/bathroom.webp"
+          "https://www.riverpenthouse.com/img/living-river.webp",
+          "https://www.riverpenthouse.com/img/bedroom-river-view.webp",
+          "https://www.riverpenthouse.com/img/bedroom-suite.webp",
+          "https://www.riverpenthouse.com/img/kitchen-wide.webp",
+          "https://www.riverpenthouse.com/img/bathroom-suite.webp"
         ],
         "priceRange": "$$",
         "aggregateRating": {
@@ -337,7 +337,24 @@
       font-size: 11px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
+      z-index: 3;
     }
+
+    /* ─── GALLERY ─── */
+    .gallery { position: relative; aspect-ratio: 3/4; overflow: hidden; }
+    .gallery-track { display: flex; width: 100%; height: 100%; overflow-x: scroll; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch; }
+    .gallery-track::-webkit-scrollbar { display: none; }
+    .gallery-slide { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; scroll-snap-align: start; display: block; }
+    .gallery-prev, .gallery-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(26,26,24,0.4); color: var(--white); border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 22px; cursor: pointer; transition: background 0.2s ease, opacity 0.2s ease; display: flex; align-items: center; justify-content: center; z-index: 2; font-family: 'Cormorant Garamond', serif; font-weight: 300; padding-bottom: 3px; }
+    .gallery-prev { left: 14px; }
+    .gallery-next { right: 14px; }
+    .gallery-prev:hover, .gallery-next:hover { background: rgba(26,26,24,0.7); }
+    .gallery-prev:disabled, .gallery-next:disabled { opacity: 0; pointer-events: none; }
+    .gallery-dots { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 2; }
+    .gallery-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.45); border: none; padding: 0; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; }
+    .gallery-dot:hover { background: rgba(255,255,255,0.75); }
+    .gallery-dot.active { background: var(--white); transform: scale(1.25); }
+    .gallery-counter { position: absolute; top: 16px; right: 16px; background: rgba(26,26,24,0.55); color: var(--white); padding: 5px 11px; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.18em; z-index: 2; }
 
     /* ─── BEDROOMS ─── */
     .bedrooms-section { background: var(--cream-dark); padding: 100px 48px; }
@@ -502,15 +519,26 @@
     <div class="intro-grid container">
       <div>
         <p class="section-eyebrow">The Space</p>
-        <h2 class="section-title">2,000 sq ft.<br>West-side windows<br>facing the <em>river.</em></h2>
+        <h2 class="section-title">A spacious penthouse<br>overlooking the river.<br><em>Spectacular sunsets.</em></h2>
         <p class="intro-body">
           Hilltop's River Penthouse occupies the entire top floor of a Main Street building in Narrowsburg, NY — perched directly above the deepest stretch of the Delaware River. With west-facing floor-to-ceiling windows, the setting sun creates a nightly spectacle that never gets old.
           <br><br>
           Inside, no detail was overlooked. High-end finishes, hotel-quality bedding, and décor curated to the level of a design magazine. This is not a typical vacation rental — it's the nicest rental in Upstate New York.
         </p>
       </div>
-      <div class="intro-image">
-        <img src="/img/living-room.webp" alt="River Penthouse living room with Delaware River views, Narrowsburg NY">
+      <div class="intro-image gallery">
+        <div class="gallery-track" id="gallery-track">
+          <img class="gallery-slide" src="/img/living-river.webp" alt="River Penthouse living room with Delaware River view, herringbone wood floors, vaulted ceiling, Narrowsburg NY" loading="eager">
+          <img class="gallery-slide" src="/img/fireplace-area.webp" alt="River Penthouse fireplace and lounge area, Narrowsburg NY" loading="lazy">
+          <img class="gallery-slide" src="/img/living-entry.webp" alt="River Penthouse entry hall and open floor plan, Narrowsburg NY" loading="lazy">
+          <img class="gallery-slide" src="/img/kitchen-wide.webp" alt="River Penthouse kitchen with marble backsplash, hood vent, stainless appliances, and bar seating, Narrowsburg NY" loading="lazy">
+          <img class="gallery-slide" src="/img/kitchen-island.webp" alt="River Penthouse kitchen island with built-in glass display shelves, Narrowsburg NY" loading="lazy">
+          <img class="gallery-slide" src="/img/bathroom-suite.webp" alt="River Penthouse spa-style bathroom with walk-in shower, Narrowsburg NY" loading="lazy">
+        </div>
+        <button class="gallery-prev" id="galleryPrev" aria-label="Previous photo">‹</button>
+        <button class="gallery-next" id="galleryNext" aria-label="Next photo">›</button>
+        <div class="gallery-dots" id="gallery-dots"></div>
+        <div class="gallery-counter" id="gallery-counter">1 / 6</div>
         <div class="intro-image-caption">Main Street · Narrowsburg, NY</div>
       </div>
     </div>
@@ -524,7 +552,7 @@
     </div>
     <div class="bedrooms-grid container">
       <div class="bedroom-card">
-        <img class="bedroom-image" src="/img/queen-bedroom.webp" alt="Queen bedroom with Delaware River view and spotting scope at River Penthouse Narrowsburg NY">
+        <img class="bedroom-image" src="/img/bedroom-river-view.webp" alt="River View Queen bedroom with chaise lounge, Delaware River view through windows, River Penthouse Narrowsburg NY">
         <div class="bedroom-info">
           <div class="bedroom-number">Bedroom One</div>
           <div class="bedroom-name">River View Queen</div>
@@ -538,7 +566,7 @@
         </div>
       </div>
       <div class="bedroom-card">
-        <img class="bedroom-image" src="/img/king-bedroom.webp" alt="King bedroom at River Penthouse Narrowsburg NY Airbnb with vaulted ceiling and exposed beam">
+        <img class="bedroom-image" src="/img/bedroom-suite.webp" alt="Spacious King bedroom at River Penthouse with cane headboard, mid-century furniture, gallery wall, Narrowsburg NY">
         <div class="bedroom-info">
           <div class="bedroom-number">Bedroom Two</div>
           <div class="bedroom-name">Spacious King</div>
@@ -598,8 +626,8 @@
         </div>
       </div>
       <div class="space-image-stack">
-        <img class="space-img-main" src="/img/kitchen.webp" alt="Penthouse kitchen with marble backsplash and island Narrowsburg NY vacation rental">
-        <img class="space-img-accent" src="/img/bathroom.webp" alt="Bathroom with Delaware River view at River Penthouse Narrowsburg NY">
+        <img class="space-img-main" src="/img/kitchen-wide.webp" alt="Penthouse kitchen with marble backsplash, hood vent, and bar seating, Narrowsburg NY vacation rental">
+        <img class="space-img-accent" src="/img/bathroom-suite.webp" alt="Spa-style bathroom with walk-in shower at River Penthouse Narrowsburg NY">
       </div>
     </div>
   </section>
@@ -712,6 +740,62 @@
         mobileNav.classList.remove('open');
       });
     });
+
+    // Gallery
+    (function() {
+      const track = document.getElementById('gallery-track');
+      if (!track) return;
+      const slides = track.querySelectorAll('.gallery-slide');
+      const total = slides.length;
+      if (total === 0) return;
+      const prevBtn = document.getElementById('galleryPrev');
+      const nextBtn = document.getElementById('galleryNext');
+      const dotsContainer = document.getElementById('gallery-dots');
+      const counter = document.getElementById('gallery-counter');
+
+      // Build dots dynamically
+      for (let i = 0; i < total; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Photo ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      }
+      const dots = dotsContainer.querySelectorAll('.gallery-dot');
+
+      let current = 0;
+      function goTo(i) {
+        i = Math.max(0, Math.min(total - 1, i));
+        track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+      }
+      function updateUI() {
+        const newCurrent = Math.round(track.scrollLeft / track.clientWidth);
+        if (newCurrent !== current) {
+          current = newCurrent;
+          dots.forEach((d, i) => d.classList.toggle('active', i === current));
+          counter.textContent = (current + 1) + ' / ' + total;
+        }
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === total - 1;
+      }
+      prevBtn.addEventListener('click', () => goTo(current - 1));
+      nextBtn.addEventListener('click', () => goTo(current + 1));
+
+      let scrollTimer;
+      track.addEventListener('scroll', () => {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(updateUI, 60);
+      });
+
+      // Keyboard navigation when gallery is focused
+      track.setAttribute('tabindex', '0');
+      track.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); }
+      });
+
+      updateUI();
+    })();
   </script>
 
 </body>
