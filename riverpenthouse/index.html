@@ -431,19 +431,38 @@
     .cta-contact { margin-top: 28px; font-family: 'Jost', sans-serif; font-weight: 200; font-size: 13px; color: rgba(255,255,255,0.4); position: relative; }
     .cta-contact a { color: rgba(255,255,255,0.7); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); }
 
+    /* ─── ENCHANTED TRAILS ─── */
+    .trails-section { padding: 100px 48px; }
+    .trails-inner { max-width: 1200px; margin: 0 auto; }
+    .trails-header { max-width: 760px; margin: 0 auto 56px; text-align: center; }
+    .trails-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(20px, 2.4vw, 28px); color: var(--river-deep); margin-top: 18px; line-height: 1.4; }
+    .trails-intro { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.9; color: var(--stone); margin-top: 26px; }
+    .trails-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+    .trails-gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .trails-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; }
+    .trails-card { background: var(--white); padding: 36px 32px; }
+    .trails-card-title { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 22px; color: var(--ink); margin-bottom: 18px; }
+    .trails-list { list-style: none; }
+    .trails-list li { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 14px; line-height: 1.65; color: var(--stone); padding: 10px 0 10px 22px; position: relative; border-bottom: 1px solid var(--sand); }
+    .trails-list li:last-child { border-bottom: none; }
+    .trails-list li::before { content: ''; position: absolute; left: 0; top: 17px; width: 6px; height: 6px; border-radius: 50%; background: var(--river); }
+    .trails-note { max-width: 640px; margin: 40px auto 0; text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 16px; line-height: 1.6; color: var(--stone); }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1024px) {
       .intro-grid, .space-grid, .know-inner { grid-template-columns: 1fr; gap: 48px; }
       .space-img-accent { display: none; }
       .bedrooms-grid { grid-template-columns: 1fr; }
       .amenities-list { grid-template-columns: 1fr 1fr; }
+      .trails-cards { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
       .hero-content { padding: 0 24px 48px; }
       .intro-section, .bedrooms-section, .space-section, .amenities-section,
-      .views-section, .know-section, .cta-section { padding: 72px 24px; }
+      .views-section, .know-section, .cta-section, .trails-section { padding: 72px 24px; }
       .amenities-list { grid-template-columns: 1fr; }
       .know-grid { grid-template-columns: 1fr; }
+      .trails-gallery { grid-template-columns: 1fr 1fr; }
     }
   </style>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -715,6 +734,60 @@
           <p class="know-text">Someone is always available to answer questions or help during your stay. Response within the hour.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ENCHANTED TRAILS -->
+  <section class="trails-section">
+    <div class="trails-inner">
+      <div class="trails-header">
+        <p class="section-eyebrow">Exclusive Guest Access</p>
+        <h2 class="section-title">Hilltop's <em>Enchanted Trails.</em></h2>
+        <p class="trails-tagline">A private trail network — exclusive to our guests.</p>
+        <p class="trails-intro">
+          River Penthouse guests get exclusive access to a hidden Pocono Mountain trail network just five minutes from the property. Two well-marked, well-groomed loops wind through forest and field, dotted with park benches and small surprises along the way. Easy to moderate difficulty. Quiet, private, and entirely yours.
+        </p>
+      </div>
+
+      <div class="trails-gallery">
+        <img src="/img/enchanted-trails-1.jpg" alt="Hilltop Enchanted Trails — sunlit forest path winding through the trees" loading="lazy">
+        <img src="/img/enchanted-trails-2.jpg" alt="Hilltop Enchanted Trails — open field along the yellow arrow loop" loading="lazy">
+        <img src="/img/enchanted-trails-3.jpg" alt="Hilltop Enchanted Trails — wooden park bench beside the trail" loading="lazy">
+        <img src="/img/enchanted-trails-4.jpg" alt="Hilltop Enchanted Trails — the Enchanted Forest archway at the trailhead" loading="lazy">
+        <img src="/img/enchanted-trails-5.jpg" alt="Hilltop Enchanted Trails — picnic area on the red arrow loop" loading="lazy">
+        <img src="/img/enchanted-trails-6.jpg" alt="Hilltop Enchanted Trails — quiet groomed path through the Pocono woods" loading="lazy">
+      </div>
+
+      <div class="trails-cards">
+        <div class="trails-card">
+          <h3 class="trails-card-title">The Trails</h3>
+          <ul class="trails-list">
+            <li>Red arrow loop: 1.5 miles, with a picnic area</li>
+            <li>Yellow arrow loop: 2.5 miles</li>
+            <li>Difficulty: easy to moderate</li>
+            <li>Well-marked and well-groomed</li>
+          </ul>
+        </div>
+        <div class="trails-card">
+          <h3 class="trails-card-title">How to Visit</h3>
+          <ul class="trails-list">
+            <li>5-minute drive from the River Penthouse</li>
+            <li>Park at 50 Castle Hill Road, Beach Lake, PA 18405</li>
+            <li>Look for the "Enchanted Forest" archway at the trailhead</li>
+            <li>Follow red arrows for the short loop, yellow for the long loop</li>
+          </ul>
+        </div>
+        <div class="trails-card">
+          <h3 class="trails-card-title">What to Bring</h3>
+          <ul class="trails-list">
+            <li>Comfortable walking shoes</li>
+            <li>Water</li>
+            <li>Pack a lunch — there's a picnic area on the red trail</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="trails-note">The trails are private and exclusive to River Penthouse and Hilltop Castle World guests. You'll have them entirely to yourself.</p>
     </div>
   </section>
 
