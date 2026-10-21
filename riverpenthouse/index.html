@@ -634,7 +634,7 @@
       </div>
       <div class="intro-image gallery">
         <div class="gallery-track" id="gallery-track">
-          <img class="gallery-slide" src="/img/bedroom-river-view.webp" alt="River Penthouse bedroom with chaise lounge and Delaware River view, Narrowsburg NY" loading="eager">
+          <img class="gallery-slide" src="/img/bedroom-queen.webp" alt="River View Queen bedroom at River Penthouse with spotting scope, Delaware River view, and chaise lounge, Narrowsburg NY" loading="eager">
           <img class="gallery-slide" src="/img/living-river.webp" alt="River Penthouse living room with Delaware River view, herringbone wood floors, vaulted ceiling, Narrowsburg NY" loading="lazy">
           <img class="gallery-slide" src="/img/fireplace-area.webp" alt="River Penthouse fireplace and lounge area with orange armchair, Narrowsburg NY" loading="lazy">
           <img class="gallery-slide" src="/img/kitchen-wide.webp" alt="River Penthouse kitchen with marble backsplash, hood vent, stainless appliances, and bar seating, Narrowsburg NY" loading="lazy">
@@ -661,7 +661,8 @@
     </div>
     <div class="bedrooms-grid container">
       <div class="bedroom-card">
-        <img class="bedroom-image" src="/img/bedroom-queen.webp" alt="River View Queen bedroom at River Penthouse with spotting scope, Delaware River view, and chaise lounge, Narrowsburg NY">
+        <video class="bedroom-image queen-film" poster="/img/queen-film.webp" muted playsinline loop preload="none"
+          role="img" aria-label="River View Queen bedroom at River Penthouse with spotting scope, Delaware River view, and chaise lounge, Narrowsburg NY" data-src="/img/queen-film.mp4"></video>
         <div class="bedroom-info">
           <div class="bedroom-number">Bedroom One</div>
           <div class="bedroom-name">River View Queen</div>
@@ -976,6 +977,23 @@
       }
       if (document.readyState === 'complete') start();
       else addEventListener('load', start, { once: true });
+    })();
+
+    // The River View Queen film (tools/make-queen-video.py): fetched when the
+    // card comes near, playing only while it's on screen; the same rules as
+    // the hero for reduced motion and saving data.
+    (function () {
+      const film = document.querySelector('.queen-film');
+      const c = navigator.connection;
+      if (!film || !('IntersectionObserver' in window) ||
+          matchMedia('(prefers-reduced-motion: reduce)').matches ||
+          (c && (c.saveData || /2g$/.test(c.effectiveType || '')))) return;
+      new IntersectionObserver(([e]) => {
+        if (e.isIntersecting) {
+          if (!film.src) film.src = film.dataset.src;
+          film.play().catch(() => {});
+        } else if (film.src) film.pause();
+      }, { rootMargin: '200px 0px' }).observe(film);
     })();
   </script>
 
