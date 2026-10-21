@@ -23,7 +23,7 @@ from PIL import Image
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(REPO, 'riverpenthouse')
-GROUND, GOLD = '#3d6170', '#d4bc9e'   # --river-deep and --gold-light
+GROUND, GOLD = '#3d6170', '#dcb57e'   # --river-deep and --gold-light
 K = re.search(r' d="([^"]+)"', open(os.path.join(REPO, 'tools', 'cornelius.svg')).read()).group(1)
 
 def svg(ring=True, bird=0.67, square=False):

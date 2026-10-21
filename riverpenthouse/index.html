@@ -98,12 +98,12 @@
       --river: #6b8f9e;
       --river-deep: #3d6170;
       --river-light: #a8c4ce;
-      --ink: #1a1a18;
-      --ink-soft: #2e2e2b;
+      --ink: #161513;
+      --ink-soft: #24211d;
       --stone: #8a8478;
       --stone-light: #b5b0a8;
-      --gold: #c4a882;
-      --gold-light: #d4bc9e;
+      --gold: #c89b5e;
+      --gold-light: #dcb57e;
       --white: #ffffff;
     }
 
@@ -136,7 +136,7 @@
       transition: background 0.4s ease, box-shadow 0.4s ease;
     }
     .site-nav.scrolled {
-      background: rgba(26,26,24,0.92);
+      background: rgba(22,21,19,0.92);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       box-shadow: 0 1px 0 rgba(255,255,255,0.06);
@@ -176,7 +176,7 @@
     .nav-links a.active { color: var(--white); }
     .nav-links .nav-book a {
       color: var(--gold-light);
-      border-bottom: 1px solid rgba(196,168,130,0.4);
+      border-bottom: 1px solid rgba(200,155,94,0.4);
       padding-bottom: 2px;
     }
     .nav-links .nav-book a:hover { color: var(--gold); border-color: var(--gold); }
@@ -208,7 +208,7 @@
       top: 64px;
       left: 0;
       right: 0;
-      background: rgba(26,26,24,0.97);
+      background: rgba(22,21,19,0.97);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       z-index: 99;
@@ -284,10 +284,48 @@
     }
     /* On a wide screen the name sits on the dark wall at the right of the
        film, leaving the door, the gate and the river clear. */
+    /* On a wide screen the film fills the first screen (phones and tablets
+       keep the 600px hero), with a small cue to scroll at its foot. */
+    .hero-scroll { display: none; }
     @media (min-width: 1025px) {
-      .hero { justify-content: flex-end; }
+      .hero { justify-content: flex-end; height: 100vh; height: 100svh; min-height: 600px; }
       .hero .hero-content { padding: 0 64px 72px 0; max-width: 40vw; }
       .hero .hero-meta { gap: 22px; }
+      .hero-scroll {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        position: absolute;
+        left: 50%;
+        bottom: 28px;
+        transform: translateX(-50%);
+        padding-left: 0.4em;
+        font-family: 'Jost', sans-serif;
+        font-weight: 200;
+        font-size: 9px;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.6);
+        text-decoration: none;
+      }
+      .hero-scroll:hover { color: var(--white); }
+      .hero-scroll::after {
+        content: '';
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(var(--gold-light), transparent);
+        transform-origin: top;
+        animation: hero-scroll 2.4s ease-in-out infinite;
+      }
+    }
+    @keyframes hero-scroll {
+      0% { transform: scaleY(0); opacity: 1; }
+      50% { transform: scaleY(1); opacity: 1; }
+      100% { transform: scaleY(1); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-scroll::after { animation: none; }
     }
     .hero-content {
       position: relative;
@@ -384,16 +422,16 @@
     .gallery-track { display: flex; width: 100%; height: 100%; overflow-x: scroll; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch; }
     .gallery-track::-webkit-scrollbar { display: none; }
     .gallery-slide { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; scroll-snap-align: start; display: block; }
-    .gallery-prev, .gallery-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(26,26,24,0.4); color: var(--white); border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 22px; cursor: pointer; transition: background 0.2s ease, opacity 0.2s ease; display: flex; align-items: center; justify-content: center; z-index: 2; font-family: 'Cormorant Garamond', serif; font-weight: 300; padding-bottom: 3px; }
+    .gallery-prev, .gallery-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(22,21,19,0.4); color: var(--white); border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 22px; cursor: pointer; transition: background 0.2s ease, opacity 0.2s ease; display: flex; align-items: center; justify-content: center; z-index: 2; font-family: 'Cormorant Garamond', serif; font-weight: 300; padding-bottom: 3px; }
     .gallery-prev { left: 14px; }
     .gallery-next { right: 14px; }
-    .gallery-prev:hover, .gallery-next:hover { background: rgba(26,26,24,0.7); }
+    .gallery-prev:hover, .gallery-next:hover { background: rgba(22,21,19,0.7); }
     .gallery-prev:disabled, .gallery-next:disabled { opacity: 0; pointer-events: none; }
     .gallery-dots { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 2; }
     .gallery-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.45); border: none; padding: 0; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; }
     .gallery-dot:hover { background: rgba(255,255,255,0.75); }
     .gallery-dot.active { background: var(--white); transform: scale(1.25); }
-    .gallery-counter { position: absolute; top: 16px; right: 16px; background: rgba(26,26,24,0.55); color: var(--white); padding: 5px 11px; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.18em; z-index: 2; }
+    .gallery-counter { position: absolute; top: 16px; right: 16px; background: rgba(22,21,19,0.55); color: var(--white); padding: 5px 11px; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.18em; z-index: 2; }
 
     /* ─── BEDROOMS ─── */
     .bedrooms-section { background: var(--cream-dark); padding: 100px 48px; }
@@ -579,10 +617,11 @@
         </div>
       </div>
     </div>
+    <a class="hero-scroll" href="#the-space">Scroll</a>
   </div>
 
   <!-- INTRO -->
-  <section class="intro-section">
+  <section class="intro-section" id="the-space">
     <div class="intro-grid container">
       <div>
         <p class="section-eyebrow">The Space</p>

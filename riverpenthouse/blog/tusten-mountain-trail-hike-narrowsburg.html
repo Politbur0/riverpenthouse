@@ -48,12 +48,12 @@
       --river: #6b8f9e;
       --river-deep: #3d6170;
       --river-light: #a8c4ce;
-      --ink: #1a1a18;
-      --ink-soft: #2e2e2b;
+      --ink: #161513;
+      --ink-soft: #24211d;
       --stone: #8a8478;
       --stone-light: #b5b0a8;
-      --gold: #c4a882;
-      --gold-light: #d4bc9e;
+      --gold: #c89b5e;
+      --gold-light: #dcb57e;
       --white: #ffffff;
     }
     html { scroll-behavior: smooth; }
@@ -63,7 +63,7 @@
 
     /* NAV */
     .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; transition: background 0.4s ease, box-shadow 0.4s ease; }
-    .site-nav.scrolled { background: rgba(26,26,24,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(255,255,255,0.06); }
+    .site-nav.scrolled { background: rgba(22,21,19,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(255,255,255,0.06); }
     .nav-logo { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 18px; color: var(--white); text-decoration: none; letter-spacing: 0.02em; flex-shrink: 0; }
     .nav-logo em { font-style: italic; color: var(--gold-light); }
     .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
@@ -72,14 +72,14 @@
     .nav-links a { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s ease; }
     .nav-links a:hover { color: var(--white); }
     .nav-links a.active { color: var(--white); }
-    .nav-links .nav-book a { color: var(--gold-light); border-bottom: 1px solid rgba(196,168,130,0.4); padding-bottom: 2px; }
+    .nav-links .nav-book a { color: var(--gold-light); border-bottom: 1px solid rgba(200,155,94,0.4); padding-bottom: 2px; }
     .nav-links .nav-book a:hover { color: var(--gold); border-color: var(--gold); }
     .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
     .nav-toggle span { display: block; width: 22px; height: 1px; background: rgba(255,255,255,0.7); transition: all 0.3s ease; }
     .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
     .nav-toggle.open span:nth-child(2) { opacity: 0; }
     .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-    .nav-mobile { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(26,26,24,0.98); backdrop-filter: blur(12px); z-index: 999; padding: 20px 32px 36px; transform: translateY(-100%); transition: transform 0.35s ease; }
+    .nav-mobile { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(22,21,19,0.98); backdrop-filter: blur(12px); z-index: 999; padding: 20px 32px 36px; transform: translateY(-100%); transition: transform 0.35s ease; }
     .nav-mobile.open { transform: translateY(0); }
     .nav-mobile ul { list-style: none; }
     .nav-mobile li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
@@ -95,7 +95,7 @@
     .post-hero { position: relative; height: 70vh; min-height: 480px; max-height: 720px; overflow: hidden; }
     .post-hero-bg { position: absolute; inset: 0; }
     .post-hero-bg img { width: 100%; height: 100%; object-fit: cover; }
-    .post-hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,26,24,0.25) 0%, rgba(26,26,24,0.15) 40%, rgba(26,26,24,0.7) 100%); }
+    .post-hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(22,21,19,0.25) 0%, rgba(22,21,19,0.15) 40%, rgba(22,21,19,0.7) 100%); }
     .post-hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 64px 48px; max-width: 1100px; margin: 0 auto; }
     .post-hero-eyebrow { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; }
     .post-hero-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(36px, 6vw, 64px); line-height: 1.05; letter-spacing: -0.01em; color: var(--white); max-width: 920px; }
@@ -128,7 +128,7 @@
     .related-header .section-title { font-size: 38px; }
     .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
     .related-card { background: var(--white); overflow: hidden; display: block; color: inherit; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .related-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(26,26,24,0.08); }
+    .related-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(22,21,19,0.08); }
     .related-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
     .related-card-info { padding: 24px 22px 26px; }
     .related-card-eyebrow { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--stone); margin-bottom: 10px; }
@@ -151,7 +151,7 @@
     .blog-grid-section { padding: 100px 32px; }
     .blog-grid-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; }
     .blog-post-card { background: var(--white); overflow: hidden; display: block; color: inherit; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .blog-post-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(26,26,24,0.08); }
+    .blog-post-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(22,21,19,0.08); }
     .blog-post-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
     .blog-post-card-info { padding: 32px 32px 36px; }
     .blog-post-card-eyebrow { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--stone); margin-bottom: 14px; }
