@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found · Hilltop's River Penthouse</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: var(--ink);
+      color: var(--white);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* The nav as on /contact: solid from the start, there being no hero. */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 48px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(22,21,19,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: rgba(22,21,19,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 99;
+      padding: 32px 48px 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-mobile.open { display: block; }
+    .nav-mobile ul { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+    .nav-mobile a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 12px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+    }
+    .nav-mobile a:hover { color: var(--white); }
+
+    .lost {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+    }
+    .lost-mark { width: 72px; height: auto; margin-bottom: 36px; }
+    .lost-eyebrow {
+      font-weight: 200;
+      font-size: 10px;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 20px;
+    }
+    .lost-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(44px, 7vw, 84px);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+    .lost-title em { font-style: italic; color: var(--gold-light); }
+    .lost-body {
+      max-width: 460px;
+      font-size: 16px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 40px;
+    }
+    .lost-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .lost-links a {
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 14px 26px;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    .lost-links a:hover { border-color: var(--gold-light); color: var(--gold-light); }
+    .lost-links a.primary { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+    .lost-links a.primary:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--ink); }
+
+    @media (max-width: 768px) {
+      .site-nav { padding: 0 24px; }
+      .nav-mobile { padding: 32px 24px 40px; }
+    }
+  </style>
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <!-- Vercel Web Analytics: cookieless page views; switched on in the Vercel dashboard. -->
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" id="siteNav">
+    <a href="/" class="nav-logo"><img class="nav-mark" src="/img/cornelius.svg" alt="" width="21" height="26">Hilltop's <em>River Penthouse</em></a>
+    <ul class="nav-links">
+      <li><a href="/">Penthouse</a></li>
+      <li><a href="/narrowsburg">Narrowsburg</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/collection">The Hilltop Collection</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li class="nav-book"><a href="https://www.airbnb.com/rooms/1452914886228919955" target="_blank">Book Now</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="nav-mobile" id="navMobile">
+    <ul>
+      <li><a href="/">Penthouse</a></li>
+      <li><a href="/narrowsburg">Narrowsburg</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/collection">The Hilltop Collection</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li class="nav-book-mobile"><a href="https://www.airbnb.com/rooms/1452914886228919955" target="_blank">Book Now →</a></li>
+    </ul>
+  </div>
+
+  <main class="lost">
+    <img class="lost-mark" src="/img/cornelius.svg" alt="Cornelius, the Hilltop kingfisher" width="72" height="90">
+    <p class="lost-eyebrow">404 · Page not found</p>
+    <h1 class="lost-title">This page has drifted<br><em>downriver.</em></h1>
+    <p class="lost-body">The address may be old or mistyped. Cornelius can point you back to the Penthouse, the town, or the river.</p>
+    <div class="lost-links">
+      <a class="primary" href="/">The Penthouse</a>
+      <a href="/narrowsburg">Narrowsburg Guide</a>
+      <a href="/blog">The Blog</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </main>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('navMobile');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
