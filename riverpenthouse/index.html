@@ -251,12 +251,43 @@
       align-items: flex-end;
       overflow: hidden;
     }
+    /* The hero film: the walk up to the door (tools/make-hero-video.py).
+       The still is the film's first frame, so the film fades in over it
+       without a jump; the script below loads the film only after the page
+       has, and never with reduced motion or a data saver on. */
     .hero-bg {
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%),
-        url('/img/hero.webp') center/cover no-repeat;
+      background: url('/img/hero-film.webp') center/cover no-repeat;
+    }
+    .hero-film {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+    .hero-film.playing { opacity: 1; }
+    /* Dark at the top for the nav (the lanterns pass behind it) and at the
+       foot for the name and the numbers. */
+    .hero-shade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.08) 22%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.7) 100%);
+    }
+    @media (max-width: 700px) {
+      .hero-bg { background-image: url('/img/hero-film-mobile.webp'); }
+      /* On a phone the type covers most of the film, so more of it is shaded. */
+      .hero-shade { background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.78) 100%); }
+    }
+    /* On a wide screen the name sits on the dark wall at the right of the
+       film, leaving the door, the gate and the river clear. */
+    @media (min-width: 1025px) {
+      .hero { justify-content: flex-end; }
+      .hero .hero-content { padding: 0 64px 72px 0; max-width: 40vw; }
+      .hero .hero-meta { gap: 22px; }
     }
     .hero-content {
       position: relative;
@@ -515,6 +546,9 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-bg"></div>
+    <video class="hero-film" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"
+      data-wide="/img/hero-film.mp4" data-narrow="/img/hero-film-mobile.mp4"></video>
+    <div class="hero-shade"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Hilltop's River Penthouse · Narrowsburg, NY</p>
       <h1 class="hero-title">The<br><em>Penthouse.</em></h1>
@@ -885,6 +919,24 @@
       });
 
       updateUI();
+    })();
+  </script>
+
+  <script>
+    // The hero film: fetched once the page has loaded, the phone or desktop
+    // cut, and not at all for reduced motion, a data saver or 2G.
+    (function () {
+      const film = document.querySelector('.hero-film');
+      const c = navigator.connection;
+      if (!film || matchMedia('(prefers-reduced-motion: reduce)').matches ||
+          (c && (c.saveData || /2g$/.test(c.effectiveType || '')))) return;
+      function start() {
+        film.src = matchMedia('(max-width: 700px)').matches ? film.dataset.narrow : film.dataset.wide;
+        film.addEventListener('playing', () => film.classList.add('playing'), { once: true });
+        film.play().catch(() => {});
+      }
+      if (document.readyState === 'complete') start();
+      else addEventListener('load', start, { once: true });
     })();
   </script>
 
