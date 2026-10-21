@@ -66,6 +66,8 @@
     .site-nav.scrolled { background: rgba(26,26,24,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(255,255,255,0.06); }
     .nav-logo { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 18px; color: var(--white); text-decoration: none; letter-spacing: 0.02em; flex-shrink: 0; }
     .nav-logo em { font-style: italic; color: var(--gold-light); }
+    .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+    .nav-mark { display: block; width: auto; height: 26px; }
     .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
     .nav-links a { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s ease; }
     .nav-links a:hover { color: var(--white); }
@@ -157,6 +159,13 @@
     .blog-post-card-excerpt { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 15px; line-height: 1.7; color: var(--ink-soft); }
     .blog-post-card:hover .blog-post-card-title { color: var(--river-deep); }
 
+    /* The full nav needs about 1,090px with the logo; below that it would overlap. */
+    @media (max-width: 1100px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-mobile { display: block; }
+    }
+
     @media (max-width: 768px) {
       .site-nav { padding: 14px 20px; }
       .nav-links { display: none; }
@@ -179,6 +188,7 @@
     }
 </style>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -186,7 +196,7 @@
 </head>
 <body>
   <nav class="site-nav" id="siteNav">
-    <a href="/" class="nav-logo">Hilltop's <em>River Penthouse</em></a>
+    <a href="/" class="nav-logo"><img class="nav-mark" src="/img/cornelius.svg" alt="" width="21" height="26">Hilltop's <em>River Penthouse</em></a>
     <ul class="nav-links">
       <li><a href="/">Penthouse</a></li>
       <li><a href="/narrowsburg">Narrowsburg</a></li>
@@ -253,7 +263,7 @@
 <p><strong>Pros:</strong></p>
 <ul>
   <li>30-minute drive to Bethel Woods — about the same as Monticello once you account for show traffic exits</li>
-  <li>Outstanding restaurants within a five-minute walk: <a href="https://www.theheronrestaurant.com/" target="_blank" rel="noopener noreferrer">The Heron</a>, <a href="https://www.lacigogneny.com/" target="_blank" rel="noopener noreferrer">La Cigogne</a>, <a href="https://www.thelaundrette.xyz/" target="_blank" rel="noopener noreferrer">The Laundrette</a></li>
+  <li>Outstanding restaurants within a five-minute walk: <a href="https://www.theheronrestaurant.com/" target="_blank" rel="noopener noreferrer">The Heron</a>, <a href="https://www.lacigogneny.com/" target="_blank" rel="noopener noreferrer">La Cigogne</a>, <a href="https://www.facebook.com/p/Bridge-and-Main-61581138516852/" target="_blank" rel="noopener noreferrer">Bridge &amp; Main</a></li>
   <li>Two excellent coffee shops, a brewery, river access, hiking, and an arts scene</li>
   <li>The drive to Bethel Woods follows the Delaware River — one of the prettiest 30-minute drives in the Northeast</li>
   <li>The whole weekend feels like a getaway, not a concert trip with a hotel attached</li>

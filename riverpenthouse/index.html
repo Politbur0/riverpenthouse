@@ -154,6 +154,8 @@
       font-style: italic;
       color: var(--gold-light);
     }
+    .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+    .nav-mark { display: block; width: auto; height: 26px; }
     .nav-links {
       display: flex;
       align-items: center;
@@ -226,6 +228,12 @@
     }
     .nav-mobile a:hover { color: var(--white); }
     .nav-mobile .nav-book-mobile a { color: var(--gold-light); }
+
+    /* The full nav needs about 1,090px with the logo; below that it would overlap. */
+    @media (max-width: 1100px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+    }
 
     @media (max-width: 768px) {
       .site-nav { padding: 0 24px; }
@@ -466,6 +474,7 @@
     }
   </style>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -475,7 +484,7 @@
 
   <!-- NAV -->
   <nav class="site-nav" id="siteNav">
-    <a href="/" class="nav-logo">Hilltop's <em>River Penthouse</em></a>
+    <a href="/" class="nav-logo"><img class="nav-mark" src="/img/cornelius.svg" alt="" width="21" height="26">Hilltop's <em>River Penthouse</em></a>
     <ul class="nav-links">
       <li><a href="/" class="active">Penthouse</a></li>
       <li><a href="/narrowsburg">Narrowsburg</a></li>
@@ -683,7 +692,7 @@
         <div class="amenity-row"><span class="amenity-row-icon">🔥</span><span class="amenity-row-name">Heating</span></div>
         <div class="amenity-row"><span class="amenity-row-icon">🧺</span><span class="amenity-row-name">Washer &amp; dryer</span></div>
         <div class="amenity-row"><span class="amenity-row-icon">🏔</span><span class="amenity-row-name">Access to Hilltop trail system</span></div>
-        <div class="amenity-row"><span class="amenity-row-icon">🛍</span><span class="amenity-row-name">Narrowsburg Proper downstairs</span></div>
+        <div class="amenity-row"><span class="amenity-row-icon">🛍</span><span class="amenity-row-name">A-Frame general store downstairs</span></div>
         <div class="amenity-row"><span class="amenity-row-icon">🍷</span><span class="amenity-row-name">Fine Wine &amp; Spirits downstairs</span></div>
       </div>
     </div>

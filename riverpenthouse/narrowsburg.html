@@ -123,6 +123,8 @@
       flex-shrink: 0;
     }
     .nav-logo em { font-style: italic; color: var(--gold-light); }
+    .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+    .nav-mark { display: block; width: auto; height: 26px; }
     .nav-links {
       display: flex;
       align-items: center;
@@ -194,6 +196,12 @@
     }
     .nav-mobile a:hover { color: var(--white); }
     .nav-mobile .nav-book-mobile a { color: var(--gold-light); }
+
+    /* The full nav needs about 1,090px with the logo; below that it would overlap. */
+    @media (max-width: 1100px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+    }
 
     @media (max-width: 768px) {
       .site-nav { padding: 0 24px; }
@@ -481,6 +489,7 @@
     }
   </style>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -490,7 +499,7 @@
 
   <!-- NAV -->
   <nav class="site-nav" id="siteNav">
-    <a href="/" class="nav-logo">Hilltop's <em>River Penthouse</em></a>
+    <a href="/" class="nav-logo"><img class="nav-mark" src="/img/cornelius.svg" alt="" width="21" height="26">Hilltop's <em>River Penthouse</em></a>
     <ul class="nav-links">
       <li><a href="/">Penthouse</a></li>
       <li><a href="/narrowsburg" class="active">Narrowsburg</a></li>
@@ -578,12 +587,12 @@
           <h2 class="section-title">Some of the best<br>food in <em>Upstate New York.</em></h2>
         </div>
         <p class="dining-intro">
-          Narrowsburg punches well above its weight for a town this size. From farm-to-table fine dining to Alsatian French bistro to wood-fired pizza — all within a short walk of your front door.
+          Narrowsburg punches well above its weight for a town this size. From farm-to-table fine dining to Alsatian French bistro to craft beer and smoked BBQ — all within a short walk of your front door.
         </p>
       </div>
 
       <div class="dining-category-label">Fine Dining</div>
-      <div class="restaurants-grid">
+      <div class="restaurants-grid-2">
         <a class="restaurant-card" href="https://www.theheronrestaurant.com/" target="_blank" rel="noopener noreferrer">
           <img class="restaurant-image" src="/img/heron.webp" alt="Mussels and grilled bread at The Heron Restaurant Narrowsburg NY — farm to table dining">
           <div class="restaurant-info">
@@ -604,6 +613,10 @@
             <span class="restaurant-tag">Reserve Recommended</span>
           </div>
         </a>
+      </div>
+
+      <div class="dining-category-label" style="margin-top: 40px;">Casual</div>
+      <div class="restaurants-grid-2">
         <a class="restaurant-card" href="https://www.facebook.com/p/Bridge-and-Main-61581138516852/" target="_blank" rel="noopener noreferrer">
           <img class="restaurant-image" src="/img/bridge-and-main.webp" alt="Bridge and Main restaurant Narrowsburg NY">
           <div class="restaurant-info">
@@ -612,20 +625,6 @@
             <div class="restaurant-type">American · Steak &amp; Seafood</div>
             <p class="restaurant-desc">A cozy-upscale restaurant and lounge on Bridge Street featuring steak, seafood, burgers, and American classics. Views of the Narrowsburg Bridge, craft cocktails, and a full bar. Gluten-free, vegetarian, and vegan options available.</p>
             <span class="restaurant-tag">Walk-Ins Welcome</span>
-          </div>
-        </a>
-      </div>
-
-      <div class="dining-category-label" style="margin-top: 40px;">Casual &amp; Pizza</div>
-      <div class="restaurants-grid-2">
-        <a class="restaurant-card" href="https://www.thelaundrette.xyz/" target="_blank" rel="noopener noreferrer">
-          <img class="restaurant-image" src="/img/laundrette.webp" alt="Tablescape on The Laundrette's porch with Delaware River views — Narrowsburg NY wood-fired pizza and wine bar">
-          <div class="restaurant-info">
-            <div class="restaurant-distance">📍 20 5th St, Narrowsburg NY</div>
-            <div class="restaurant-name">The Laundrette</div>
-            <div class="restaurant-type">Wood-Fired Pizza · Wine Bar</div>
-            <p class="restaurant-desc">Wood-fired sourdough pizzas made with local and organic ingredients, inventive salads, and a top-flight sound system. A porch with a direct view of the Narrowsburg Bridge and the Delaware River. Open Thursday through Sunday.</p>
-            <span class="restaurant-tag">Thu–Sun Only</span>
           </div>
         </a>
         <a class="restaurant-card" href="https://www.bigeddybrewingco.com/" target="_blank" rel="noopener noreferrer">
@@ -657,7 +656,7 @@
             <div class="coffee-distance">☕ 90 Main St, Narrowsburg · Wed–Sun</div>
             <div class="coffee-name">2 Queens Coffee</div>
             <div class="coffee-type">Specialty Coffee · Café</div>
-            <p class="coffee-desc">A specialty coffee shop on Main Street in the same building as La Cigogne and Narrowsburg Proper. Quality espresso drinks, a focused menu, and a relaxed neighborhood vibe. Open Wednesday through Sunday from 7:30am.</p>
+            <p class="coffee-desc">A specialty coffee shop on Main Street in the same building as La Cigogne. Quality espresso drinks, a focused menu, and a relaxed neighborhood vibe. Open Wednesday through Sunday from 7:30am.</p>
           </div>
         </a>
       </div>
@@ -741,7 +740,7 @@
           <div class="todo-content">
             <div class="todo-category">Shopping</div>
             <div class="todo-name">Antiquing &amp; Boutiques</div>
-            <p class="todo-desc">Main Street Narrowsburg has a growing collection of antique shops, independent boutiques, and specialty stores — including Narrowsburg Proper, Fine Wine &amp; Spirits, and more, all steps from the Penthouse.</p>
+            <p class="todo-desc">Main Street Narrowsburg has a growing collection of antique shops, independent boutiques, and specialty stores — including A-Frame, a home goods general store right downstairs from the Penthouse, Fine Wine &amp; Spirits, and more.</p>
             <div class="todo-distance">📍 Main Street, Narrowsburg NY</div>
           </div>
         </div>
